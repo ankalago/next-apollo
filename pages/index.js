@@ -21,8 +21,10 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ul>
-        {data.jobs.map(job => {
-          return <li key={`job__${job.id}`}>{job.title}</li>;
+        {data.getCatalogsQueryFunction.map(catalogs => {
+          return catalogs.vehicle_view.map(catalog => {
+            return <li key={`job__${catalog.id}`}>{catalog.value}</li>;
+          });
         })}
       </ul>
     </div>
